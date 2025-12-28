@@ -44,11 +44,12 @@ export function objectFieldsList(obj1, obj2, obj3) {
 */
 export function objectClone(obj, count) {
   const result = [];
-
-  for (let i = 1; i <= count; i++) {
-    const clone = { ...obj, id: i };
+  
+  for (let i = 0; i < count; i++) {
+    const clone = JSON.parse(JSON.stringify(obj));
+    clone.id = i;
     result.push(clone);
   }
-
+  
   return result;
 }
